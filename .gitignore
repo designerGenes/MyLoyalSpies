@@ -1,3 +1,5 @@
-venv/*
+venv/
 .git/
-venv
+ViewerUnit/venv/
+CameraUnit/venv/
+

@@ -1,0 +1,4 @@
+flask==2.0.1
+picamera2==0.3.8
+opencv-python-headless==4.6.0.66
+paramiko==2.7.2
