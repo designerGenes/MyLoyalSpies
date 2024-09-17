@@ -1,5 +1,6 @@
 from flask import Flask, render_template, Response
 from picamera2 import Picamera2, Preview
+from libcamera import controls
 import cv2
 import numpy as np
 
@@ -8,6 +9,8 @@ app = Flask(__name__)
 
 # Initialize Picamera2
 camera = Picamera2()
+# rotate images automatically by 90 degrees
+camera.set_rotation(90)
 
 # Create a configuration for video streaming (you can adjust this as needed)
 camera_config = camera.create_video_configuration()
@@ -38,4 +41,5 @@ def index():
 def video_feed():
     """Video streaming route. Put this in the src attribute of an img tag."""
     return Response(generate_frames(),
+
 
